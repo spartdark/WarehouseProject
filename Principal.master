@@ -1,0 +1,185 @@
+﻿<%@ Master Language="VB" CodeFile="Principal.master.vb" Inherits="Principal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style2 {
+            width: 175px;
+        }
+        .auto-style3 {
+            text-align: center;
+        }
+        .auto-style4 {
+            height: 690px;
+            width: 247px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table cellpadding="2" cellspacing="0" class="auto-style1">
+            <tr>
+                <td colspan="2" style="height: 240px">
+                    <asp:Image ID="Image3" runat="server" ImageUrl="~/imagenes/Titulo.png" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <br />
+                    <asp:LoginView ID="LoginView1" runat="server">
+                        <AnonymousTemplate>
+                            <table cellspacing="0" class="auto-style2">
+                                <tr>
+                                    <td class="auto-style3">Menu Principal</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Menu ID="Menu1" runat="server" Font-Italic="False" Font-Names="Lucida Bright" ForeColor="Blue">
+                                            <Items>
+                                                <asp:MenuItem NavigateUrl="~/Administrador/Inicio Administrador.aspx" Text="Administrador" Value="Administrador"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Empleado/Inicio Empleado.aspx" Text="Empleado" Value="Empleado"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Alamacenista/InicioAlmacenista.aspx" Text="Almacenista" Value="Almacenista"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/AcercaDe.aspx" Text="Aceca de" Value="Aceca de"></asp:MenuItem>
+                                            </Items>
+                                        </asp:Menu>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </table>
+                        </AnonymousTemplate>
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="Administrador">
+                                <ContentTemplate>
+                                    <table cellspacing="0" class="auto-style2">
+                                        <tr>
+                                            <td class="auto-style3">Menu Principal<asp:Label ID="Label1" runat="server" Text="  Administrador"></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:LoginName ID="LoginName1" runat="server" Font-Italic="True" Font-Names="FangSong" Font-Size="X-Large" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:Menu ID="Menu1" runat="server" Font-Italic="False" Font-Names="Lucida Bright" ForeColor="Blue">
+                                                    <Items>
+                                                        <asp:MenuItem Text="Almacenista" Value="Administrador">
+                                                            <asp:MenuItem Text="Alta" Value="Alta"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Baja" Value="Baja"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Modificacion" Value="Modificacion"></asp:MenuItem>
+                                                        </asp:MenuItem>
+                                                        <asp:MenuItem Text="Empleado" Value="Empleado">
+                                                            <asp:MenuItem Text="Alta" Value="Alta"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Baja" Value="Baja"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Modificacion" Value="Modificacion"></asp:MenuItem>
+                                                        </asp:MenuItem>
+                                                        <asp:MenuItem Text="Reporte" Value="Aceca de">
+                                                            <asp:MenuItem Text="Por Almacenista" Value="Por Almacenista"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Por empleado" Value="Por empleado"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Por Producto" Value="Por Producto"></asp:MenuItem>
+                                                        </asp:MenuItem>
+                                                    </Items>
+                                                </asp:Menu>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:LoginStatus ID="LoginStatus4" runat="server" ForeColor="Red" LoginText="Logeado" LogoutAction="Redirect" LogoutPageUrl="~/Default.aspx" LogoutText="Cerrar sesion" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                            <asp:RoleGroup Roles="Almacenista">
+                                <ContentTemplate>
+                                    <table cellspacing="0" class="auto-style2">
+                                        <tr>
+                                            <td class="auto-style3">Menu Principal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:LoginName ID="LoginName2" runat="server" BorderStyle="Solid" Font-Names="Blackadder ITC" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:Menu ID="Menu1" runat="server" Font-Italic="False" Font-Names="Lucida Bright" ForeColor="Blue">
+                                                    <Items>
+                                                        <asp:MenuItem NavigateUrl="~/Administrador/Inicio Administrador.aspx" Text="Administrador" Value="Administrador"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Empleado/Inicio Empleado.aspx" Text="Empleado" Value="Empleado"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Alamacenista/InicioAlmacenista.aspx" Text="Almacenista" Value="Almacenista"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/AcercaDe.aspx" Text="Aceca de" Value="Aceca de"></asp:MenuItem>
+                                                    </Items>
+                                                </asp:Menu>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:LoginStatus ID="LoginStatus5" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/Default.aspx" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                            <asp:RoleGroup Roles="Empleado">
+                                <ContentTemplate>
+                                    <table cellspacing="0" class="auto-style2">
+                                        <tr>
+                                            <td class="auto-style3">Menu Principal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:LoginName ID="LoginName2" runat="server" BorderStyle="Solid" Font-Names="Blackadder ITC" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:Menu ID="Menu1" runat="server" Font-Italic="False" Font-Names="Lucida Bright" ForeColor="Blue">
+                                                    <Items>
+                                                        <asp:MenuItem NavigateUrl="~/Administrador/Inicio Administrador.aspx" Text="Administrador" Value="Administrador"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Empleado/Inicio Empleado.aspx" Text="Empleado" Value="Empleado"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Alamacenista/InicioAlmacenista.aspx" Text="Almacenista" Value="Almacenista"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/AcercaDe.aspx" Text="Aceca de" Value="Aceca de"></asp:MenuItem>
+                                                    </Items>
+                                                </asp:Menu>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:LoginStatus ID="LoginStatus5" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/Default.aspx" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
+                    </asp:LoginView>
+                </td>
+                <td style="height: 990px">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 70px">
+                    <asp:Image ID="Image2" runat="server" ImageUrl="~/imagenes/Pie.png" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
